@@ -126,6 +126,10 @@ mlflow run \
 
 ## Provenance and license
 
-This repository is a fork of an Udacity MLOps project scaffold. The work in this fork completes and extends the pipeline wiring, data cleaning and validation, feature/model training, compatibility updates, and versioned release verification. It should be described as a completed learning project, not as an independently created production system or employment deliverable.
+This repository is a fork of an Udacity MLOps project scaffold. The work in
+this fork completes and extends the pipeline wiring, data cleaning and
+validation, feature/model training, compatibility updates, and versioned
+release verification. It is an independently completed portfolio
+implementation, not a production system or employment deliverable.
 
 The original educational content and scaffold remain governed by [`LICENSE.txt`](LICENSE.txt). The license and fork provenance are intentionally retained.
