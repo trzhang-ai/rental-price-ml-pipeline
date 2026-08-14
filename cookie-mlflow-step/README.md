@@ -1,17 +1,18 @@
-# Cookiecutter template for MLFlow steps
+# Cookiecutter template for MLflow steps
 
-Using this template you can quickly generate new steps to be used with MLFlow.
+Use this template to create a consistent MLflow Project component with W&B
+artifact initialization and command-line parameters.
 
-# Usage
-Run the command:
+## Usage
 
+```bash
+cookiecutter PATH_TO_TEMPLATE -o DESTINATION_DIRECTORY
 ```
-> cookiecutter [path to this repo] -o [destination directory]
-```
 
-and follow the prompt. The tool will ask for the step name, the script name, the description and so on. It will
-also ask for the parameters of the script. This should be a comma-separated list of parameter names *without spaces*. 
-After you are done, you will find a new directory with the provided step name containing a stub of a new MLflow step.
+The prompt collects the step name, script name, descriptions, job type, and a
+comma-separated parameter list without spaces. The rendered directory contains
+an MLflow project, Conda environment, and runnable Python entry point.
 
-You will need to edit both the script and the MLproject files to fill in the type and the help for the parameters.
-Of course, if your script needs packages, these should be added to the conda.yml file.
+Generated command-line parameters default to strings. Specialize their types
+and descriptions when needed, implement the component-specific artifact
+workflow, and add any additional packages to `conda.yml`.

@@ -20,9 +20,8 @@ def go(args):
     # particular version of the artifact
     # artifact_local_path = run.use_artifact(args.input_artifact).file()
 
-    ######################
-    # YOUR CODE HERE     #
-    ######################
+    # Add the component-specific artifact transformation and logging workflow
+    # here after rendering the template.
 
 
 if __name__ == "__main__":
@@ -31,9 +30,9 @@ if __name__ == "__main__":
 
 {% for arg_name in cookiecutter.parameters.split(",") %}
     parser.add_argument(
-        "--{{arg_name}}", 
-        type=## INSERT TYPE HERE: str, float or int,
-        help=## INSERT DESCRIPTION HERE,
+        "--{{arg_name}}",
+        type=str,
+        help="Value for the {{arg_name}} parameter",
         required=True
     )
 {% endfor %}
