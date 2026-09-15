@@ -3,7 +3,7 @@
 A reproducible training pipeline for estimating nightly prices from historical New York City short-term rental listings. The project combines configurable orchestration, data-quality gates, tabular and text feature engineering, experiment tracking, and versioned model artifacts.
 
 - [Weights & Biases experiments and artifacts](https://wandb.ai/jameschang1992/nyc_airbnb)
-- [Versioned releases](https://github.com/trzhang-ai/build-ml-pipeline-for-short-term-rental-prices/releases)
+- [Versioned releases](https://github.com/trzhang-ai/rental-price-ml-pipeline/releases)
 
 ## What the pipeline does
 
@@ -35,9 +35,9 @@ The following metrics come from a previously verified remote run of Release `1.0
 
 | Release | Input sample | R² | MAE |
 | --- | --- | ---: | ---: |
-| [`1.0.1`](https://github.com/trzhang-ai/build-ml-pipeline-for-short-term-rental-prices/releases/tag/1.0.1) | `sample2.csv` | `0.6237` | `$31.63` |
+| [`1.0.1`](https://github.com/trzhang-ai/rental-price-ml-pipeline/releases/tag/1.0.1) | `sample2.csv` | `0.6237` | `$31.63` |
 
-Release [`1.0.2`](https://github.com/trzhang-ai/build-ml-pipeline-for-short-term-rental-prices/releases/tag/1.0.2) updates dependency compatibility. It is the latest published release, but the table above must not be interpreted as a fresh metric run for `1.0.2`.
+Release [`1.0.2`](https://github.com/trzhang-ai/rental-price-ml-pipeline/releases/tag/1.0.2) updates dependency compatibility. It is the latest published release, but the table above must not be interpreted as a fresh metric run for `1.0.2`.
 
 ## Configuration
 
@@ -95,7 +95,7 @@ Run a published release against another bundled sample:
 
 ```bash
 mlflow run \
-  https://github.com/trzhang-ai/build-ml-pipeline-for-short-term-rental-prices.git \
+  https://github.com/trzhang-ai/rental-price-ml-pipeline.git \
   -v <release-tag> \
   -P hydra_options="etl.sample='sample2.csv'"
 ```
@@ -106,7 +106,7 @@ mlflow run \
 .
 ├── main.py                         # MLflow/Hydra orchestration
 ├── config.yaml                     # Data and model configuration
-├── EDA.ipynb                       # Exploratory data analysis
+├── rental_data_review.ipynb                       # Exploratory data analysis
 ├── src/
 │   ├── basic_cleaning/             # Cleaning and geographic filters
 │   ├── data_check/                 # Pytest-based data-quality gates
