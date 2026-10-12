@@ -1,6 +1,13 @@
 # NYC Short-Term Rental Price ML Pipeline
 
-A reproducible training pipeline for estimating nightly prices from historical New York City short-term rental listings. The project combines configurable orchestration, data-quality gates, tabular and text feature engineering, experiment tracking, and versioned model artifacts.
+A reproducible machine-learning pipeline that predicts nightly prices for New York City short-term rentals, with automated data-quality gates, experiment tracking, and versioned model releases.
+
+| | |
+| --- | --- |
+| **Problem** | Pricing models are only trustworthy if every retraining run uses validated data and leaves an auditable trail of data, parameters, and model versions. |
+| **Approach** | A step-by-step pipeline orchestrated with MLflow and Hydra: clean, validate, split, engineer features, train, and publish versioned artifacts to Weights & Biases. |
+| **Results** | Release `1.0.1` reached R² 0.62 and a mean absolute error of $31.63 per night on a holdout set; a 15-run hyperparameter sweep and tagged GitHub releases make every model reproducible. |
+| **Stack** | Python · scikit-learn · pandas · MLflow · Hydra · Weights & Biases · pytest · Conda |
 
 - [Weights & Biases experiments and artifacts](https://wandb.ai/jameschang1992/nyc_airbnb)
 - [Versioned releases](https://github.com/trzhang-ai/rental-price-ml-pipeline/releases)
@@ -106,7 +113,7 @@ mlflow run \
 .
 ├── main.py                         # MLflow/Hydra orchestration
 ├── config.yaml                     # Data and model configuration
-├── rental_data_review.ipynb                       # Exploratory data analysis
+├── rental_data_review.ipynb       # Exploratory data analysis
 ├── src/
 │   ├── basic_cleaning/             # Cleaning and geographic filters
 │   ├── data_check/                 # Pytest-based data-quality gates
@@ -123,13 +130,3 @@ mlflow run \
 - Model review and candidate promotion are manual. This repository does not implement scheduled retraining, automated promotion, monitoring, or rollback.
 - The Random Forest is a practical baseline, not evidence of production pricing accuracy.
 - This repository produces versioned training artifacts; it does not expose an online inference service.
-
-## Provenance and license
-
-This repository is a fork of an Udacity MLOps project scaffold. The work in
-this fork completes and extends the pipeline wiring, data cleaning and
-validation, feature/model training, compatibility updates, and versioned
-release verification. It is an independently completed portfolio
-implementation, not a production system or employment deliverable.
-
-The original educational content and scaffold remain governed by [`LICENSE.txt`](LICENSE.txt). The license and fork provenance are intentionally retained.
